@@ -8,30 +8,43 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors()); // allow requests from frontend
-app.use(express.json()); // parse JSON body
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173", // local development
+      "https://pegrummeafrica.co.ke", // production domain
+      "https://www.pegrummeafrica.co.ke", // optional (recommended)
+    ],
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
+  }),
+);
+app.use(express.json());
 
-// Nodemailer transporter
+// ✅ Nodemailer transporter (CORRECT)
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT),
-  secure: process.env.SMTP_PORT == 465, // true for 465, false for 587
+  host: process.env.SMTP_HOST, // smtp.hmailplus.com
+  port: Number(process.env.SMTP_PORT), // 587
+  secure: false, // MUST be false for STARTTLS
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
+  tls: {
+    rejectUnauthorized: false, // avoids TLS handshake issues
+  },
 });
 
-// Test SMTP connection
-transporter.verify((error, success) => {
+// ✅ Verify SMTP connection
+transporter.verify((error) => {
   if (error) {
-    console.error("SMTP connection error:", error);
+    console.error("❌ SMTP connection error:", error);
   } else {
-    console.log("SMTP ready to send emails");
+    console.log("✅ SMTP ready to send emails");
   }
 });
 
-// POST endpoint for contact form
+// ✅ Email endpoint
 app.post("/send-email", async (req, res) => {
   const { name, email, message } = req.body;
 
@@ -41,18 +54,22 @@ app.post("/send-email", async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from: `"${name}" <${email}>`, // sender (user)
-      to: process.env.EMAIL_USER, // your purchased email
+      from: `"${name}" <${process.env.EMAIL_USER}>`, // MUST be your domain email
+      replyTo: email, // sender's email
+      to: process.env.EMAIL_USER,
       subject: "New Contact Form Message",
       text: message,
-      html: `<p><strong>Name:</strong> ${name}</p>
-             <p><strong>Email:</strong> ${email}</p>
-             <p><strong>Message:</strong><br/>${message}</p>`,
+      html: `
+        <h3>New Contact Form Message</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong><br/>${message}</p>
+      `,
     });
 
     res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
-    console.error(error);
+    console.error("❌ Send mail error:", error);
     res.status(500).json({ message: "Failed to send email" });
   }
 });
@@ -60,5 +77,5 @@ app.post("/send-email", async (req, res) => {
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });

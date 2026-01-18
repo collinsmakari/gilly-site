@@ -12,10 +12,10 @@ export default function Home() {
       <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-24">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6">We Help Businesses Grow</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto"></p>
-          <p>
-            Apex Consulting provides expert guidance in strategy, technology,
-            and operations.
+          <p className="text-lg mb-8 max-w-2xl mx-auto "></p>
+          <p className="mb-8">
+            Pegrumme Consulting provides expert guidance in strategy,
+            technology, and operations.
           </p>
           <a
             href="/contact"
