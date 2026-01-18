@@ -1,14 +1,21 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const linkClass = ({ isActive }) =>
-    `block py-2 text-base font-medium ${
-      isActive ? "text-blue-600" : "text-gray-700 hover:text-blue-600"
-    }`;
+    `relative inline-block px-1 py-2 text-lg font-medium transition-colors
+     ${
+       isActive
+         ? "text-blue-600 after:scale-x-100"
+         : "text-gray-700 hover:text-blue-600"
+     }
+     after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full
+     after:origin-center after:scale-x-0 after:bg-blue-600
+     after:transition-transform after:duration-300
+     hover:after:scale-x-100`;
 
   return (
     <nav className="bg-white shadow sticky top-0 z-50">
@@ -16,7 +23,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <h1 className="text-xl sm:text-2xl font-bold text-blue-600">
-            Apex Consulting
+            Pegrumme Consulting
           </h1>
 
           {/* Desktop Menu */}
@@ -38,7 +45,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-gray-700 focus:outline-none"
+            className="md:hidden text-gray-700"
             aria-label="Toggle menu"
           >
             {open ? <FiX size={26} /> : <FiMenu size={26} />}
@@ -49,7 +56,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden bg-white border-t shadow-sm">
-          <div className="px-4 py-3 space-y-2">
+          <div className="flex flex-col items-center justify-center py-6 space-y-6">
             <NavLink
               to="/"
               className={linkClass}

@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Apex Consulting | Business & Strategy Experts"
+        title="Pegrumme Consulting | Business & Strategy Experts"
         description="Professional consulting services in business strategy, technology, and growth optimization."
         keywords="consulting company, business consultants, strategy consulting"
       />

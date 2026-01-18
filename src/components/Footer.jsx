@@ -9,11 +9,12 @@ export default function Footer() {
         {/* Company Info */}
         <div>
           <h3 className="text-xl font-bold text-white mb-4">
-            Gilly Consulting
+            Pegrumme Consulting
           </h3>
           <p className="text-sm leading-relaxed">
-            We help businesses grow through strategy, technology, and
-            data-driven decision making. Trusted by startups and enterprises.
+            At Pegrumme Africa, we combine integrity,expertise,and a
+            client-first approach to help organizations build resilient,
+            well-governed, and future-ready businesses.
           </p>
         </div>
         {/* Quick Links */}
@@ -45,7 +46,7 @@ export default function Footer() {
         {/* Contact & Social */}
         <div>
           <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
-          <p className="text-sm mb-3">Email: info@gillyconsulting.com</p>
+          <p className="text-sm mb-3">Email: info@pegrummeafrica.co.ke</p>
           <div className="flex gap-4 text-xl">
             <a href="#" aria-label="LinkedIn" className="hover:text-cyan-400">
               <FaLinkedin />
@@ -53,11 +54,9 @@ export default function Footer() {
             <a href="#" aria-label="Twitter" className="hover:text-cyan-400">
               <FaTwitter />
             </a>
-            <a href="#" aria-label="GitHub" className="hover:text-cyan-400">
-              <FaGithub />
-            </a>
+
             <a
-              href="mailto:info@gillyconsulting.com"
+              href="mailto:info@pegrummeafrica.co.ke"
               aria-label="Email"
               className="hover:text-cyan-400"
             >
@@ -68,7 +67,7 @@ export default function Footer() {
       </div>
       {/* Bottom Bar */}
       <div className="border-t border-gray-700 text-center py-4 text-sm">
-        © {year} Gilly Consulting. All rights reserved.
+        © {year} Pegrumme Consulting. All rights reserved.
       </div>
     </footer>
   );
