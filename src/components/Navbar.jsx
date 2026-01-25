@@ -23,7 +23,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 ">
-            Pegrumme Consulting
+            Pegrumme Africa.
           </h1>
 
           {/* Desktop Menu */}
