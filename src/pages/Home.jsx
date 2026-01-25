@@ -150,9 +150,27 @@ export default function Home() {
             Strategic, technical, and operational consulting designed to help
             ambitious companies scale with confidence.
           </p>
-          <Link to="/services">
-            <button className="bg-white text-blue-700 px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-              Get Service
+          <Link to="/contact" className="w-full mt-6">
+            <button
+              className="
+                    bg-blue-700 
+                    text-white 
+                    px-6 sm:px-8 
+                    py-2 sm:py-3 
+                    rounded-lg 
+                    font-semibold 
+                    border border-transparent 
+                    hover:bg-white
+                    hover:text-blue-700
+                    hover:border-blue-800
+                    hover:scale-105
+                    transition 
+                    duration-300 
+                    ease-in-out
+                    w-full
+                  "
+            >
+              Get Services
             </button>
           </Link>
         </div>
