@@ -150,7 +150,7 @@ export default function Home() {
             Strategic, technical, and operational consulting designed to help
             ambitious companies scale with confidence.
           </p>
-          <Link to="/contact" className="w-full mt-6">
+          <Link to="/services" className="w-full mt-6">
             <button
               className="
                     bg-blue-700 
@@ -167,7 +167,7 @@ export default function Home() {
                     transition 
                     duration-300 
                     ease-in-out
-                    w-full
+                    
                   "
             >
               Get Services

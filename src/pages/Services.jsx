@@ -97,7 +97,7 @@ export default function Services() {
                 </div>
 
                 {/* Button pinned to bottom */}
-                <Link to="/contact" className="w-full mt-6">
+                <Link to="/contact" className="w-full mt-6 flex justify-center">
                   <button
                     className="
                       bg-blue-700 
@@ -114,7 +114,7 @@ export default function Services() {
                       transition 
                       duration-300 
                       ease-in-out
-                      w-full
+                      
                     "
                   >
                     Contact Us
