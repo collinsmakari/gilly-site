@@ -18,11 +18,11 @@ export default function Navbar() {
      hover:after:scale-x-100`;
 
   return (
-    <nav className="bg-white shadow sticky top-0 z-50">
+    <nav className="bg-gray-200 shadow sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <h1 className="text-xl sm:text-2xl font-bold text-blue-600">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 ">
             Pegrumme Consulting
           </h1>
 

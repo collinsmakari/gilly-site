@@ -4,7 +4,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-300 mt-20">
+    <footer className="bg-gray-900 text-gray-300 mt-2">
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Company Info */}
         <div>
@@ -46,7 +46,16 @@ export default function Footer() {
         {/* Contact & Social */}
         <div>
           <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
-          <p className="text-sm mb-3">Email: info@pegrummeafrica.co.ke</p>
+          <p className="text-sm mb-3">
+            Email:{" "}
+            <a
+              href="mailto:info@pegrummeafrica.co.ke"
+              className="text-blue-500 hover:text-blue-700 hover:underline"
+            >
+              info@pegrummeafrica.co.ke
+            </a>
+          </p>
+
           <div className="flex gap-4 text-xl">
             <a href="#" aria-label="LinkedIn" className="hover:text-cyan-400">
               <FaLinkedin />
