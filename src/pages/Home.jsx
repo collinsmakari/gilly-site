@@ -22,19 +22,19 @@ const TESTIMONIALS = [
   {
     quote:
       "Pegrumme Consulting helped us streamline operations and scale faster than we imagined.",
-    author: "Sarah M.",
+    author: "",
     role: "CEO, Hawk Airfreight and Logistics Ltd",
   },
   {
     quote:
       "Their strategic insight and technical expertise made a real impact on our growth.",
-    author: "David L.",
+    author: "",
     role: "CTO, Magenta (K) Africa",
   },
   {
     quote:
       "Professional, reliable, and results-driven. A true partner in success.",
-    author: "Emily R.",
+    author: "",
     role: "COO, Manage IT",
   },
 ];
