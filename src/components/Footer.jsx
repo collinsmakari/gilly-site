@@ -1,4 +1,5 @@
-import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -12,37 +13,39 @@ export default function Footer() {
             Pegrumme Consulting
           </h3>
           <p className="text-sm leading-relaxed">
-            At Pegrumme Africa, we combine integrity,expertise,and a
+            At Pegrumme Africa, we combine integrity, expertise, and a
             client-first approach to help organizations build resilient,
             well-governed, and future-ready businesses.
           </p>
         </div>
+
         {/* Quick Links */}
         <div>
           <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="/" className="hover:text-cyan-400">
+              <Link to="/" className="hover:text-cyan-400 transition">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" className="hover:text-cyan-400">
+              <Link to="/about" className="hover:text-cyan-400 transition">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/services" className="hover:text-cyan-400">
+              <Link to="/services" className="hover:text-cyan-400 transition">
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-cyan-400">
+              <Link to="/contact" className="hover:text-cyan-400 transition">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
+
         {/* Contact & Social */}
         <div>
           <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
@@ -57,23 +60,31 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-4 text-xl">
-            <a href="#" aria-label="LinkedIn" className="hover:text-cyan-400">
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              className="hover:text-cyan-400 transition"
+            >
               <FaLinkedin />
             </a>
-            <a href="#" aria-label="Twitter" className="hover:text-cyan-400">
+            <a
+              href="#"
+              aria-label="Twitter"
+              className="hover:text-cyan-400 transition"
+            >
               <FaTwitter />
             </a>
-
             <a
               href="mailto:info@pegrummeafrica.co.ke"
               aria-label="Email"
-              className="hover:text-cyan-400"
+              className="hover:text-cyan-400 transition"
             >
               <FaEnvelope />
             </a>
           </div>
         </div>
       </div>
+
       {/* Bottom Bar */}
       <div className="border-t border-gray-700 text-center py-4 text-sm">
         © {year} Pegrumme Consulting. All rights reserved.
