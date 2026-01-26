@@ -40,45 +40,53 @@ export default function ContactForm() {
   };
 
   return (
-    <form
-      ref={form}
-      onSubmit={sendEmail}
-      className="max-w-xl mx-auto space-y-4"
-    >
-      <input
-        name="user_name"
-        placeholder="Full Name"
-        required
-        className="w-full border p-3 rounded focus:ring-2 focus:ring-blue-600 outline-none"
-      />
-      <input
-        name="user_email"
-        type="email"
-        placeholder="Email Address"
-        required
-        className="w-full border p-3 rounded focus:ring-2 focus:ring-blue-600 outline-none"
-      />
-      <textarea
-        name="message"
-        placeholder="Your Message"
-        rows="5"
-        required
-        className="w-full border p-3 rounded focus:ring-2 focus:ring-blue-600 outline-none"
-      />
-      <button
-        type="submit"
-        disabled={loading}
-        className="w-full bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+    <div className="flex justify-center px-6">
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className="w-full max-w-xl bg-gray-100 rounded-lg p-8 md:p-10 space-y-4 shadow-md"
       >
-        {loading ? "Sending..." : "Send Message"}
-      </button>
-      {status && (
-        <p
-          className={`mt-2 text-center ${status.startsWith("✅") ? "text-green-600" : "text-red-600"}`}
+        <input
+          name="user_name"
+          placeholder="Full Name"
+          required
+          className="w-full bg-white border border-gray-300 p-3 rounded focus:ring-2 focus:ring-blue-600 outline-none"
+        />
+
+        <input
+          name="user_email"
+          type="email"
+          placeholder="Email Address"
+          required
+          className="w-full bg-white border border-gray-300 p-3 rounded focus:ring-2 focus:ring-blue-600 outline-none"
+        />
+
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          rows="5"
+          required
+          className="w-full bg-white border border-gray-300 p-3 rounded focus:ring-2 focus:ring-blue-600 outline-none"
+        />
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition disabled:opacity-60"
         >
-          {status}
-        </p>
-      )}
-    </form>
+          {loading ? "Sending..." : "Send Message"}
+        </button>
+
+        {status && (
+          <p
+            className={`mt-2 text-center ${
+              status.startsWith("✅") ? "text-green-600" : "text-red-600"
+            }`}
+          >
+            {status}
+          </p>
+        )}
+      </form>
+    </div>
   );
 }

@@ -16,7 +16,7 @@ export default function Contact() {
         keywords="contact consulting company, business consultation, accounting, finance, services"
       />
 
-      <section className="max-w-7xl mx-auto px-6 py-20">
+      <section className="bg-gray-200 max-w-6xl mx-auto px-6 py-20">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-blue-600">
           Contact Us
         </h2>
