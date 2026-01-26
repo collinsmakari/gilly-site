@@ -21,7 +21,7 @@ const STATS = [
 const TESTIMONIALS = [
   {
     quote:
-      "Pegrumme Consulting helped us streamline operations and scale faster than we imagined.",
+      "Pegrumme Africa helped us streamline operations and scale faster than we imagined.",
     author: "",
     role: "CEO, Hawk Airfreight and Logistics Ltd",
   },

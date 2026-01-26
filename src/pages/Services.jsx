@@ -41,7 +41,7 @@ export default function Services() {
       <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-6">
           {/* Heading */}
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center text-blue-600">
             Our Services
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto mb-12 text-center">
